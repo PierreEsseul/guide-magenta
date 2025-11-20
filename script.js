@@ -1,22 +1,35 @@
 // --------- PROTECTION PAR CODE D'ACCÈS ---------
-const API_URL = "/api/code"; // appelle ton API Vercel
+const API_URL = "/api/code";
 
-let codesLoaded = false;
 let validCodes = new Set();
+let codesLoaded = false;
 
 async function loadCodes() {
   try {
     const res = await fetch(API_URL);
-    const json = await res.json();
+    const data = await res.json();
 
-    json.codes.forEach(c => validCodes.add(c));
+    (data.codes || []).forEach((c) => {
+      if (c) validCodes.add(String(c).trim());
+    });
 
+    codesLoaded = true; //IMPORTANT : on passe à true une fois chargé
     console.log("Codes chargés :", validCodes);
+    const error = document.getElementById("login-error");
+    if (error && error.textContent.startsWith("Les codes sont en cours")) {
+      error.textContent = ""; // on efface le message d’attente si besoin
+    }
   } catch (err) {
-    console.error("Erreur:", err);
+    console.error("Erreur lors du chargement des codes :", err);
+    const error = document.getElementById("login-error");
+    if (error) {
+      error.textContent =
+        "Impossible de charger les codes. Merci de réessayer un peu plus tard.";
+    }
   }
 }
-async function checkCode(event) {
+
+function checkCode(event) {
   event.preventDefault();
   const input = document.getElementById("login-code");
   const error = document.getElementById("login-error");
@@ -29,7 +42,6 @@ async function checkCode(event) {
   }
 
   if (validCodes.has(value)) {
-    // Succès : on affiche la page, on cache l'écran de login
     document.getElementById("login").style.display = "none";
     document.getElementById("protected").style.display = "block";
     error.textContent = "";
@@ -40,8 +52,9 @@ async function checkCode(event) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadCodes();
+  loadCodes(); 
 });
+
 // --------- FIN PROTECTION ---------
 
 // Smooth scroll “propre” sur les liens du menu
