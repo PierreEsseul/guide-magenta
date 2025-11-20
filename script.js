@@ -1,5 +1,5 @@
 // --------- PROTECTION PAR CODE D'ACCÈS ---------
-const API_URL = "/api/codes"; // appelle ton API Vercel
+const API_URL = "/api/code"; // appelle ton API Vercel
 
 let codesLoaded = false;
 let validCodes = new Set();
