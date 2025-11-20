@@ -14,13 +14,11 @@ async function loadCodes() {
     });
 
     codesLoaded = true; //IMPORTANT : on passe à true une fois chargé
-    console.log("Codes chargés :", validCodes);
     const error = document.getElementById("login-error");
     if (error && error.textContent.startsWith("Les codes sont en cours")) {
       error.textContent = ""; // on efface le message d’attente si besoin
     }
   } catch (err) {
-    console.error("Erreur lors du chargement des codes :", err);
     const error = document.getElementById("login-error");
     if (error) {
       error.textContent =
