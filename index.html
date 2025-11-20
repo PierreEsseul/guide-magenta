@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bienvenue – Appartement Magenta | Checkin-Concierge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Pour limiter l'indexation par les moteurs de recherche -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  
+  <div id="login" class="login-overlay">
+    <div class="login-card">
+      <h2>Accès voyageurs</h2>
+      <p>Merci de saisir votre <strong>numéro de confirmation</strong> pour accéder au guide de l’appartement.</p>
+      <form onsubmit="checkCode(event)">
+        <input
+          id="login-code"
+          type="text"
+          inputmode="numeric"
+          autocomplete="one-time-code"
+          placeholder="Numéro de confirmation"
+          required
+        />
+        <button type="submit">Valider</button>
+      </form>
+      <p id="login-error" class="login-error"></p>
+    </div>
+  </div>
+
+    <div id="protected" style="display:none;">
+        <header class="site-header">
+            <div class="logo-group">
+                <!-- Remplace les src par le chemin réel vers tes logos -->
+                <a href="https://www.checkin-concierge.com" target="_blank">
+                <img src="img/LogoCC.jpg" alt="Logo Checkin-Concierge" class="logo" />
+                </a>
+            
+                <span class="divider"></span>
+
+                <a href="https://www.checkin-concierge.com" target="_blank">
+                <img src="img/shamengo-logo.png" alt="Logo Shamengo" class="logo logo-shamengo" />
+                </a>
+
+                
+            </div>
+
+            <h1>Bienvenue à l’appartement Magenta</h1>
+
+            <div class="header-text">
+                <p>
+                Nous sommes ravis de vous accueillir au
+                <strong>62 boulevard de Magenta, 75010 Paris</strong>.
+                </p>
+                <p class="subtitle">
+                Cette page regroupe toutes les infos pratiques pour profiter au mieux de votre séjour.
+                </p>
+            </div>
+            </header>
+
+            <nav class="main-nav">
+            <a href="#infos-appartement">Infos pratiques</a>
+            <a href="#video-lumieres">Lumières</a>
+            <a href="#tri">Tri des déchets</a>
+            <a href="#shamengo">Shamengo</a>
+            <a href="#decouvrir-paris">Découvrir Paris</a>
+            <a href="#carte">Carte</a>
+            </nav>
+
+            <main class="content">
+            <!-- INFOS APPARTEMENT -->
+            <section id="infos-appartement" class="card">
+                <h2>À propos de l’appartement</h2>
+                <p>
+                L’appartement se trouve au <strong>62 boulevard de Magenta</strong>, à proximité des gares de
+                l’Est et du Nord, dans un quartier vivant, bien desservi en transports, restaurants et commerces.
+                </p>
+                <p>
+                Checkin-Concierge gère votre séjour de <strong>l’arrivée au départ</strong> : accès autonome,
+                assistance pour les voyageurs, gestion des éventuels petits soucis dans le logement, etc.
+                </p>
+                <ul class="bullet-list">
+                <li>Wi-Fi haut débit (identifiants disponibles sur votre plateforme de réservation)</li>
+                <li>Check-in et check-out en autonomie via le service keynest situé au 87 Bd de Strasbourg, 75010 Paris</li>
+                <li>Appartement entièrement équipé pour votre séjours</li>
+                </ul>
+            </section>
+
+            <!-- VIDEO LUMIÈRES -->
+            <section id="video-lumieres" class="card">
+                <h2>Comment allumer les lumières de l’appartement</h2>
+                <p>
+                L’éclairage de l’appartement a été conçu pour offrir une ambiance tamisée et apaisante, 
+                fidèle aux valeurs portées par Shamengo. Chaque point lumineux, du salon à la cuisine, a été pensé pour 
+                favoriser le calme, la douceur et la sérénité, grâce à un jeu subtil d’éclairages indirects et de lampes d’appoint. 
+                Nous vous invitons à profiter de cette atmosphère lumineuse légère, idéale pour se détendre et se ressourcer durant votre séjour.<br>
+
+                Pour vous simplifier la prise en main de l’appartement, nous avons préparé une courte vidéo qui
+                vous montre comment fonctionnent :
+                </p>
+                <ul class="bullet-list">
+                <li>Les éclairages du salon (plafonnier, lampes d’appoint)</li>
+                <li>Les lumières de la cuisine via les variateurs d'intensitée lumineuse</li>
+                <li>Les éclairages des chambres et de la salle de bain</li>
+                </ul>
+
+                <div class="video-wrapper">
+                <!-- vidéo YouTube / Vimeo – remplace l'URL par la tienne -->
+                <iframe
+                    src="https://www.youtube.com/embed/XXXXXXXXXXX"
+                    title="Tutoriel lumières – Appartement Magenta"
+                    allowfullscreen
+                    loading="lazy"
+                ></iframe>
+                </div>
+
+                <p class="tip">
+                💡 Astuce : pensez à éteindre les lumières en quittant le logement, pour des raisons
+                écologiques et pour le confort des voisins.
+                </p>
+            </section>
+
+            <!-- TRI SÉLECTIF -->
+            <section id="tri" class="card">
+                <h2>Tri sélectif & gestion des déchets</h2>
+                <p>
+                Merci de nous aider à réduire l’empreinte environnementale du logement en respectant le
+                <strong>tri sélectif</strong>. Dans la cuisine, vous trouverez plusieurs contenants distincts :
+                </p>
+
+                <div class="waste-grid">
+                <div class="waste-item">
+                    <div class="title-logo">
+                        <img src="img/dechets_organiques.png" alt="logo pour contenaire des dechets organiques">
+                        <h3>Déchets organiques</h3>
+                    </div>
+                    <p>
+                    Épluchures de fruits et légumes, marc de café, sachets de thé, petits restes alimentaires
+                    <em>sans emballage</em>. Utilisez le bac identifié “Déchets organiques”.
+                    </p>
+                </div>
+                <div class="waste-item">
+                    <div class="title-logo">
+                        <img src="img/dechets_menagers.png" alt="logo pour contenaire des dechets organiques">
+                        <h3>Déchets ménagers</h3>
+                    </div>
+                    <p>
+                        Tout ce qui ne se recycle pas : mouchoirs, serviettes en papier, emballages sales, etc.
+                        Utilisez la poubelle “Déchets ménagers”.
+                    </p>
+                </div>
+                <div class="waste-item">
+                    <div class="title-logo">
+                        <img src="img/plastique_emballages.png" alt="logo pour contenaire des dechets organiques">
+                        <h3>Plastique & emballages</h3>
+                    </div>
+                    <p>
+                    Bouteilles en plastique, briques alimentaires, boîtes en carton propres, canettes…
+                    Merci de les vider avant de les jeter. Utilisez la poubelle “Plastique / Emballages”.
+                    </p>
+                </div>
+                <div class="waste-item">
+                    <div class="title-logo">
+                        <img src="img/verre.png" alt="logo pour contenaire des dechets organiques">
+                        <h3>Verre</h3>
+                    </div>
+                    <p>
+                    Bouteilles en verre, pots et bocaux (sans couvercle métallique). Le verre ne va
+                    <strong>jamais</strong> dans les poubelles classiques. Déposez-le dans le contenant “Verre”
+                    prévu dans l’appartement ou dans les bornes de tri dans la rue.
+                    </p>
+                </div>
+                </div>
+
+                <p class="tip">
+                ♻️ Merci ! Votre geste participe directement à la réduction des déchets et à la valorisation
+                des matières recyclables.
+                </p>
+            </section>
+
+            <!-- SHAMENGO / PROPRIÉTAIRES -->
+            <section id="shamengo" class="card">
+                <h2>Les propriétaires & Shamengo</h2>
+                <p>
+                Les propriétaires de l’appartement sont engagés dans une association appelée
+                <strong>Shamengo</strong>. L’École Shamengo développe des modules pédagogiques dédiés à la
+                <strong>transition écologique et sociale</strong>, en s’appuyant sur des innovations durables
+                et sur le partage de “pionniers du nouveau monde”.
+                </p>
+                <p>
+                Concrètement, Shamengo met en lumière des femmes et des hommes qui inventent de nouvelles
+                façons de :
+                </p>
+                <ul class="bullet-list">
+                <li>Préserver la planète</li>
+                <li>Créer dans l’éthique</li>
+                <li>S’engager pour les autres</li>
+                <li>Prendre soin de soi autrement</li>
+                </ul>
+                <p>
+                En séjournant ici, vous soutenez indirectement ces initiatives positives qui visent à rendre
+                nos modes de vie plus responsables.
+                </p>
+
+                <p class="cta-links">
+                🌍 Pour en savoir plus :
+                <a href="https://www.shamengo.com/fr/" target="_blank" rel="noopener noreferrer">
+                    Découvrir Shamengo
+                </a>
+                </p>
+            </section>
+
+            <!-- DÉCOUVRIR PARIS -->
+            <section id="decouvrir-paris" class="card">
+                <h2>Découvrir Paris & idées d’activités</h2>
+                <p>
+                Pour préparer votre séjour, retrouver les grands classiques ou dénicher des idées plus
+                originales, nous vous recommandons de consulter le site officiel de l’Office du Tourisme de
+                Paris :
+                </p>
+
+                <p class="cta-links">
+                🏛️
+                <a href="https://parisjetaime.com" target="_blank" rel="noopener noreferrer">
+                    Paris je t’aime – Office du Tourisme & des Congrès de Paris
+                </a>
+                </p>
+
+                <p>
+                Vous y trouverez :
+                </p>
+                <ul class="bullet-list">
+                <li>Les monuments incontournables (Tour Eiffel, Louvre, Arc de Triomphe, etc.)</li>
+                <li>Les musées, expositions et spectacles du moment</li>
+                <li>Les balades, croisières, visites guidées et activités en famille</li>
+                </ul>
+
+                <p class="tip">
+                ✅ Astuce : pensez à réserver en ligne pour éviter les files d’attente sur les sites les plus
+                fréquentés.
+                </p>
+            </section>
+
+            <!-- CARTE -->
+            <section id="carte" class="card">
+                <h2>Carte & points d’intérêt</h2>
+                <p>
+                L’appartement est idéalement situé au
+                <strong>62 boulevard de Magenta, 75010 Paris</strong>, à quelques minutes à pied des gares de
+                l’Est et du Nord, et très bien connecté au reste de la ville en métro et en bus.
+                </p>
+
+                <div class="map-wrapper">
+                <!-- Carte Google Maps centrée sur l’adresse du logement -->
+                <iframe
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps?q=62%20Boulevard%20de%20Magenta%2C%2075010%20Paris&output=embed"
+                ></iframe>
+                </div>
+
+                <p class="map-intro">
+                Quelques grands sites parisiens à explorer durant votre séjour :
+                </p>
+
+                <div class="poi-buttons">
+                <a
+                    href="https://www.google.com/maps/search/Arc+de+Triomphe,+Paris"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline"
+                >
+                    Arc de Triomphe
+                </a>
+                <a
+                    href="https://www.google.com/maps/search/Tour+Eiffel,+Paris"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline"
+                >
+                    Tour Eiffel
+                </a>
+                <a
+                    href="https://www.google.com/maps/search/Mus%C3%A9e+du+Louvre,+Paris"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline"
+                >
+                    Musée du Louvre
+                </a>
+                </div>
+
+                <p class="map-intro">
+                Pour manger dans le quartier, vous pouvez également explorer :
+                </p>
+
+                <div class="poi-buttons">
+                <a
+                    href="https://www.google.com/maps/search/Restaurants+pr%C3%A8s+de+62+Boulevard+de+Magenta+75010+Paris"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline"
+                >
+                    Restaurants
+                </a>
+                <a
+                    href="https://www.google.com/maps/search/Boulangerie+de+62+Boulevard+de+Magenta+75010+Paris"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline"
+                >
+                    Boulangerie
+                </a>
+                <a
+                    href="https://www.google.com/maps/search/Caf%C3%A9s+pr%C3%A8s+de+62+Boulevard+de+Magenta+75010+Paris"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline"
+                >
+                    Cafés & petits déjeuners
+                </a>
+                </div>
+            </section>
+            </main>
+
+            <footer class="site-footer">
+            <p>
+                Page conçue par <strong>Checkin-Concierge</strong> – accès réservé aux voyageurs.
+            </p>
+            <p class="footer-links">
+                <a href="https://www.checkin-concierge.com" target="_blank" rel="noopener noreferrer">
+                Checkin-Concierge
+                </a>
+            </p>
+            </footer>
+        </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
